@@ -9,18 +9,21 @@ const projects = [
       "A full-stack e-commerce solution with user authentication, product management, and payment integration.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
     link: "#",
+    // image: "/path-to-your-image.jpg" // Uncomment and provide a real path if you have images
   },
   {
     title: "Task Management App",
     description: "A responsive task management application with real-time updates and collaborative features.",
     technologies: ["Next.js", "Firebase", "Tailwind CSS"],
     link: "#",
+    // image: "/path-to-your-image.jpg"
   },
   {
     title: "Weather Dashboard",
     description: "An interactive weather dashboard that provides real-time weather information and forecasts.",
     technologies: ["React", "Redux", "OpenWeatherMap API"],
     link: "#",
+    // image: "/path-to-your-image.jpg"
   },
 ];
 
@@ -37,6 +40,17 @@ export default function Projects() {
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
+                {/* Image placeholder or actual image if available */}
+                <div className="relative w-full h-48 mb-4 bg-gray-200 flex items-center justify-center text-gray-500">
+                  {/* If you have a project.image property, use: 
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="object-cover w-full h-full"
+                  /> 
+                  */}
+                  Project Image
+                </div>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <Badge key={tech} variant="outline">
@@ -48,6 +62,9 @@ export default function Projects() {
               <CardFooter>
                 <Button asChild>
                   <a href={project.link}>View Project</a>
+                </Button>
+                <Button asChild>
+                  <a href={project.link}>Github</a>
                 </Button>
               </CardFooter>
             </Card>
