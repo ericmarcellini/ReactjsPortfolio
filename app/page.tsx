@@ -5,7 +5,7 @@ import Projects from "@/components/projects"
 import Contact from "@/components/contact"
 
 export const metadata: Metadata = {
-  title: "Your Name - Web Developer Portfolio",
+  title: "Eric Marcellini - Web Developer Portfolio",
   description: "Showcase of web development projects and skills",
 }
 
