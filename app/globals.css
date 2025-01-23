@@ -76,3 +76,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.get-in-touch {
+  @apply bg-card text-card-foreground;
+}
+
+.get-in-touch:hover {
+  @apply bg-red-500;
+}

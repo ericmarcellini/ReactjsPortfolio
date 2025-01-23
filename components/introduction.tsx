@@ -13,7 +13,7 @@ export default function Introduction() {
         My expertise includes React, Next.js, and modern web development tools, 
         with a focus on creating seamless digital experiences.
       </p>
-      <Button asChild>
+      <Button className="get-in-touch" asChild>
         <a href="#contact">Get in Touch</a>
       </Button>
     </section>
