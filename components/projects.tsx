@@ -60,7 +60,7 @@ export default function Projects() {
                   />
                 </div>
 
-                {/* Technologies */}
+                {/* Technologies map */}
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <Badge key={tech} variant="outline">
