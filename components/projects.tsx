@@ -43,6 +43,7 @@ export default function Projects() {
     <section>
       <h2 className="text-3xl font-semibold mb-6 text-center">Projects</h2>
       <div className="space-y-6">
+        {/* Project map section*/}
         {projects.map((project) => (
           <div key={project.title} className="flex justify-center">
             <Card className="w-full max-w-4xl">

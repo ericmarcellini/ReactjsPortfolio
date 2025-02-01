@@ -9,9 +9,7 @@ export default function Introduction() {
       <h1 className="text-4xl font-bold">Eric Marcellini</h1>
       <h2 className="text-xl text-gray-400">Web Developer - 📍Berlin, Germany</h2>
       <p className="text-lg max-w-2xl">
-        I design and build functional, user-friendly websites and web applications. 
-        My expertise includes React, Next.js, and modern web development tools, 
-        with a focus on creating seamless digital experiences.
+        I am a React.js and Next.js developer. I enjoy building dynamic and responsive web applications. I am always eager to learn new technologies and improve my skills.
       </p>
       <Button className="get-in-touch" asChild>
         <a href="#contact">Get in Touch</a>
