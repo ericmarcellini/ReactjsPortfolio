@@ -42,16 +42,16 @@ export default function Projects() {
   return (
     <section>
       <h2 className="text-3xl font-semibold mb-6 text-center">Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="space-y-6">
         {projects.map((project) => (
-          <div key={project.title} className="flex flex-col items-stretch">
-            <Card className="flex flex-col h-full">
+          <div key={project.title} className="flex justify-center">
+            <Card className="w-full max-w-4xl">
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-1">
-                {/* Image */}
+              <CardContent>
+                {/* Project Image section*/}
                 <div className="mb-4 bg-gray-200 flex justify-center items-center">
                   <img
                     src={project.image}
@@ -60,7 +60,7 @@ export default function Projects() {
                   />
                 </div>
 
-                {/* Technologies map */}
+                {/* Technologies  map*/}
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <Badge key={tech} variant="outline">
