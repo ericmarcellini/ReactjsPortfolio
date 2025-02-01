@@ -22,10 +22,18 @@ const projects = [
   },
   {
     title: "Pokedex",
-    description: "Pokedex app that displays information about different Pokemon species. Uses the PokeAPI.",
+    description: "Pokedex app that displays information about different Pokemon species. Uses the PokeAPI. Now transforming this project into Typescript, Next.js and TailwindCSS.",
     technologies: ["Javascript", "CSS", "HTML"],
     link: "https://github.com/ericmarcellini/pokedex",
     live: "https://ericmarcellini.github.io/pokedex/",
+    image: "/images/projects/pkm1.png",
+  },
+  {
+    title: "This Portfolio",
+    description: "Portfolio website built with Next.js for more optimized SEO, Tailwind CSS for styling, and TypeScript.",
+    technologies: ["Next.js","TypeScript", "Tailwind CSS", ],
+    link: "https://github.com/ericmarcellini/ReactjsPortfolio",
+    live: "#",
     image: "/images/projects/pkm1.png",
   },
 ];
@@ -34,39 +42,49 @@ export default function Projects() {
   return (
     <section>
       <h2 className="text-3xl font-semibold mb-6 text-center">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="space-y-6">
         {projects.map((project) => (
-          <div key={project.title}>
-            <Card>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="relative w-full h-48 mb-4 bg-gray-200 flex items-center justify-center text-gray-500">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-cover w-full h-full"
-                  /> 
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="outline">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button asChild>
-                  <a href={project.live}>Live Project</a>
-                </Button>
-                <Button asChild>
-                  <a href={project.link}>Github</a>
-                </Button>
-              </CardFooter>
-            </Card>
+          <div key={project.title} className="md:flex gap-6 items-start">
+            <div className="md:w-4/5">
+              <Card>
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+            {/* Left side */}
+            <div className=" mb-4 md:mb-0 bg-gray-200 flex justify-center items-center">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="object-cover max-h-72 w-full"
+              />
+            </div>
+
+            {/* Right side */}
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <Badge key={tech} variant="outline">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="space-x-2">
+                  <Button asChild>
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      Live Project
+                    </a>
+                  </Button>
+                  <Button asChild>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      Github
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
           </div>
         ))}
       </div>
