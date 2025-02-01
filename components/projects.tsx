@@ -42,49 +42,46 @@ export default function Projects() {
   return (
     <section>
       <h2 className="text-3xl font-semibold mb-6 text-center">Projects</h2>
-      <div className="space-y-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <div key={project.title} className="md:flex gap-6 items-start">
-            <div className="md:w-4/5">
-              <Card>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-            {/* Left side */}
-            <div className=" mb-4 md:mb-0 bg-gray-200 flex justify-center items-center">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="object-cover max-h-72 w-full"
-              />
-            </div>
+          <div key={project.title} className="flex flex-col items-stretch">
+            <Card className="flex flex-col h-full">
+              <CardHeader>
+                <CardTitle>{project.title}</CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1">
+                {/* Image */}
+                <div className="mb-4 bg-gray-200 flex justify-center items-center">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="object-cover max-h-72 w-full"
+                  />
+                </div>
 
-            {/* Right side */}
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="space-x-2">
-                  <Button asChild>
-                    <a href={project.live} target="_blank" rel="noopener noreferrer">
-                      Live Project
-                    </a>
-                  </Button>
-                  <Button asChild>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      Github
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </div>
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <Badge key={tech} variant="outline">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+              <CardFooter className="space-x-2">
+                <Button asChild>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer">
+                    Live Project
+                  </a>
+                </Button>
+                <Button asChild>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    Github
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
         ))}
       </div>
